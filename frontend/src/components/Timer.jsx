@@ -12,6 +12,7 @@ const Timer = ({ sessionInfo }) => {
     const [stopSession, { stopIsLoading }] = useStopSessionMutation();
     const dispatch = useDispatch();
 
+    // starts session if one doesnt exists and/or starts timer locally
     const handleStartClick = async () => {
         if (!sessionInfo) return
         const hasStarted = sessionInfo?.startTime
@@ -31,6 +32,7 @@ const Timer = ({ sessionInfo }) => {
 
     }
 
+    // marking session as complete on the backend and updating sessions list of incomplete tasks
     const handleStopClick = async () => {
         setStarted(false)
         try {
@@ -79,6 +81,7 @@ const Timer = ({ sessionInfo }) => {
             <div>
                 {
                     started ?
+                        // the pause button stops the local timer, does not mark session as complete
                         <svg onClick={() => setStarted(false)} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill={sessionInfo ? "currentColor" : "gray"} className="w-16 h-16 cursor-pointer"
                         >
                             <path fillRule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12ZM9 8.25a.75.75 0 0 0-.75.75v6c0 .414.336.75.75.75h.75a.75.75 0 0 0 .75-.75V9a.75.75 0 0 0-.75-.75H9Zm5.25 0a.75.75 0 0 0-.75.75v6c0 .414.336.75.75.75H15a.75.75 0 0 0 .75-.75V9a.75.75 0 0 0-.75-.75h-.75Z" clipRule="evenodd" />

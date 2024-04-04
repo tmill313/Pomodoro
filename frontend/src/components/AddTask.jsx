@@ -19,6 +19,8 @@ const AddTask = ({ handleCancelClick }) => {
         setEmoji(emojiData.emoji)
         setIsEmojiPickerOpen(false)
     }
+
+    // create new task/session
     const submitHandler = async (e) => {
 
         try {

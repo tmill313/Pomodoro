@@ -23,6 +23,7 @@ const LoginForm = () => {
         }
     }, [navigate, userInfo, settingInfo]);
 
+    // attempt to log user in
     const submitHandler = async (e) => {
         try {
             const res = await login({ email, password }).unwrap();

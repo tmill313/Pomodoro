@@ -1,5 +1,6 @@
 import React from "react";
 
+// button to show the add task form fields
 const AddTaskButton = ({ handleClick }) => {
     return (
         <div className="divide-y rounded-lg">

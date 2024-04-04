@@ -24,6 +24,7 @@ const RegisterForm = () => {
         }
     }, [navigate, userInfo]);
 
+    // create user and redirect to the timer
     const submitHandler = async () => {
 
         if (password !== confirmPassword) {

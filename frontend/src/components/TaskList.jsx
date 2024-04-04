@@ -2,6 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import Card from './Card';
 
+// map over tasks
 function TaskList({ initialDuration }) {
     const { sessionInfo } = useSelector((state) => state.auth);
 

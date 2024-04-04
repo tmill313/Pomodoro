@@ -21,6 +21,7 @@ const ProfileForm = () => {
         setEmail(userInfo?.email ?? '');
     }, [userInfo.email, userInfo.name]);
 
+    // update profile info
     const submitHandler = async (e) => {
         e.preventDefault();
         if (password !== confirmPassword) {

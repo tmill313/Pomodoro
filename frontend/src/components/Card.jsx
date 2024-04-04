@@ -21,6 +21,7 @@ const Card = ({ session, thisDuration }) => {
   const [deleteSession, { isLoading }] = useDeleteSessionMutation();
   const [editSession, { updateIsLoading }] = useEditSessionMutation();
 
+  // delete a session
   const handleDeleteClick = async () => {
     const res = await deleteSession({
       id: session._id
@@ -37,6 +38,7 @@ const Card = ({ session, thisDuration }) => {
     setShowEmojiEdit(false)
   }
 
+  // update session onblur
   const handleDurationBlur = async () => {
     const res = await editSession({
       id: session._id,
@@ -45,7 +47,7 @@ const Card = ({ session, thisDuration }) => {
     dispatch(setSession(res))
     setShowDurationEdit(false)
   }
-
+  // update session onblur
   const handleDescriptionBlur = async () => {
     const res = await editSession({
       id: session._id,
@@ -75,6 +77,7 @@ const Card = ({ session, thisDuration }) => {
             {showDescriptionEdit ? <input
               className="font-semibold ml-6 text-gray-500 hover:text-gray-600 cursor-pointer w-24"
               onKeyDown={(e) => {
+                // update on enter click
                 if (e.key === "Enter")
                   handleDescriptionBlur();
               }}
@@ -95,6 +98,7 @@ const Card = ({ session, thisDuration }) => {
           {showDurationEdit ? <input
             className="font-semibold ml-6 text-gray-500 hover:text-gray-600 cursor-pointer w-16 text-right"
             onKeyDown={(e) => {
+              // update on enter click
               if (e.key === "Enter")
                 handleDurationBlur();
             }}

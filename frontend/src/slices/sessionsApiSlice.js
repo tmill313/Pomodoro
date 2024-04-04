@@ -1,6 +1,7 @@
 import { apiSlice } from './apiSlice';
 const SESSIONS_URL = '/api/sessions';
 
+// Extend apiSlice with session-specific endpoints
 export const sessionsApiSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
     startSession: builder.mutation({
