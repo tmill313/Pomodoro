@@ -85,11 +85,12 @@ const getSessions = asyncHandler(async (req, res) => {
       }
     });
 
-        // @desc    Get sessions from today
+// @desc    Get sessions from today
 // @route   GET /api/session/today
 // @access  Private
 const getToday = asyncHandler(async (req, res) => {
 
+  // get session numbers for all sessions for a user
     const totalSessionNumbers = await Session.aggregate([
         // First Stage
         {
@@ -108,7 +109,7 @@ const getToday = asyncHandler(async (req, res) => {
         }
 
        ])
-
+      //  get sessions numbers for all completed sessions for a user
     const completedSessionNumbers = await Session.aggregate([
         // First Stage
         {
@@ -133,6 +134,7 @@ const getToday = asyncHandler(async (req, res) => {
         }
 
        ])
+      //  get sessions numbers for all incomplete sessions for a user
 
        const notCompletedSessionNumbers = await Session.aggregate([
         // First Stage

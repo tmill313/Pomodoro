@@ -11,6 +11,7 @@ const authUser = asyncHandler(async (req, res) => {
 
   const user = await User.findOne({ email });
 
+  // check that user exists and that password matches
   if (user && (await user.matchPassword(password))) {
     generateToken(res, user._id);
     const sessionList = await Session.find({userId: user._id, endTime: null}).sort('position');
