@@ -1,4 +1,3 @@
-import { Container } from 'react-bootstrap';
 import { Outlet } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -9,9 +8,9 @@ const App = () => {
     <>
       <Navbar />
       <ToastContainer />
-      <Container className='my-2 max-w-sm flex items-start justify-center'>
+      <div className='my-2 flex items-start justify-center'>
         <Outlet />
-      </Container>
+      </div>
     </>
   );
 };

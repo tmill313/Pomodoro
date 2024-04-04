@@ -6,6 +6,12 @@ This project is a full-stack web application for a Pomodoro Timer. It uses Node.
 
 ## Setup Instructions
 
+### .env Setup
+
+```
+rename .env-example to .env
+```
+
 ### Install Dependencies (frontend & backend)
 
 ```
